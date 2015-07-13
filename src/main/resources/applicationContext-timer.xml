@@ -1,0 +1,139 @@
+<!-- <?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:jee="http://www.springframework.org/schema/jee"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xsi:schemaLocation="http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.0.xsd
+			http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+			http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd
+			http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee-4.0.xsd
+			http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.0.xsd
+			http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd">
+	固定时间去取最新的天气预报情况
+	<bean id="WeatherService" class="com.reyuan.jk.web.service.mobile.WeatherService"/>
+	<bean id="WeatherBean" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+		<property name="targetObject">
+			<ref bean="WeatherService"/>
+		</property>
+		<property name="targetMethod">
+			<value>workWeather</value>
+		</property>
+	</bean>
+	<bean id="WeatherCityTimer" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail">
+			<ref bean="WeatherBean"/>
+		</property>
+		<property name="cronExpression">
+			<value>0 0 0/6 * * ?</value>
+		</property>
+	</bean>
+	
+	固定半小时更新新闻点击数量
+	<bean id="NewsBrowerCountService" class="com.reyuan.jk.web.service.mobile.NewsBrowerCountService"/>
+	<bean id="NewbrowerBean" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+		<property name="targetObject">
+			<ref bean="NewsBrowerCountService"/>
+		</property>
+		<property name="targetMethod">
+			<value>UpdateContenBrowerCountByMap</value>
+		</property>
+	</bean>
+	<bean id="NewbrowerTimer" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail">
+			<ref bean="NewbrowerBean"/>
+		</property>
+		<property name="cronExpression">
+			<value>0 0 0/6 * * ?</value>
+		</property>
+	</bean>
+	
+	固定更新用户最后的登录时间
+	<bean id="TimerService" class="com.reyuan.jk.web.service.mobile.TimerService"/>
+	<bean id="LastLogTimerBean" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+		<property name="targetObject">
+			<ref bean="TimerService"/>
+		</property>
+		<property name="targetMethod">
+			<value>lastLogTimer</value>
+		</property>
+	</bean>
+	<bean id="LastLogTimer" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail">
+			<ref bean="LastLogTimerBean"/>
+		</property>
+		<property name="cronExpression">
+			<value>0 0 0/6 * * ?</value>
+		</property>
+	</bean>
+	
+	固定时间更新合作客户的展现数量变化
+	<bean id="CustomerBean" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+		<property name="targetObject">
+			<ref bean="TimerService"/>
+		</property>
+		<property name="targetMethod">
+			<value>workCustomer</value>
+		</property>
+	</bean>
+	<bean id="CustomerTimer" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail">
+			<ref bean="CustomerBean"/>
+		</property>
+		<property name="cronExpression">
+			<value>0 0 0/6 * * ?</value>
+		</property>
+	</bean>
+	
+	固定更新用户的最后访问时间
+	<bean id="LastAcessTimerBean" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+		<property name="targetObject">
+			<ref bean="TimerService"/>
+		</property>
+		<property name="targetMethod">
+			<value>lastAcessTimer</value>
+		</property>
+	</bean>
+	<bean id="LastAcessTimer" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail">
+			<ref bean="LastAcessTimerBean"/>
+		</property>
+		<property name="cronExpression">
+			<value>0 0 0/3 * * ?</value>
+		</property>
+	</bean>
+	
+	每小时更新首页当中的数据
+	<bean id="StartInformationService" class="com.reyuan.jk.web.service.mobile.StartInformationService"/>
+	<bean id="StartInformationTimerBean" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+		<property name="targetObject">
+			<ref bean="StartInformationService"/>
+		</property>
+		<property name="targetMethod">
+			<value>startInformation</value>
+		</property>
+	</bean>
+	<bean id="StartInformationTimer" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail">
+			<ref bean="StartInformationTimerBean"/>
+		</property>
+		<property name="cronExpression">
+			<value>0 0 0/6 * * ?</value>
+		</property>
+	</bean>
+	<bean id="StartTimer" lazy-init="false" autowire="no" class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+		<property name="triggers">
+			<list>
+				<ref bean="LastAcessTimer"/>
+				<ref bean="LastLogTimer"/>
+				<ref bean="NewbrowerTimer"/>
+				<ref bean="CustomerTimer"/>
+				<ref bean="WeatherCityTimer"/>
+				<ref bean="StartInformationTimer"/>
+			</list>
+		</property>
+	</bean> 
+</beans> -->

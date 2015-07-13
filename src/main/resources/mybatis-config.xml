@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<!--  
+	<typeAliases>
+		<package name="com.reyuan.jk.db/reyuan.model"/>
+	</typeAliases>-->
+
+    <mappers>
+    	<!-- 服务器mapper -->        
+		<mapper resource="com/reyuan/jk/db/server/daoxml/JkBodyPartMapper.xml"/>
+        <mapper resource="com/reyuan/jk/db/server/daoxml/JkColumnMapper.xml"/>
+        <mapper resource="com/reyuan/jk/db/server/daoxml/JkCommentMapper.xml"/>
+        <mapper resource="com/reyuan/jk/db/server/daoxml/JkContentCateMapper.xml"/>
+        <mapper resource="com/reyuan/jk/db/server/daoxml/JkContentImgMapper.xml"/>
+        <mapper resource="com/reyuan/jk/db/server/daoxml/JkContentMapper.xml"/>
+        <mapper resource="com/reyuan/jk/db/server/daoxml/JkCustomerMapper.xml"/>
+        <mapper resource="com/reyuan/jk/db/server/daoxml/JkCustomPushMapper.xml"/>
+        <mapper resource="com/reyuan/jk/db/server/daoxml/JkDepartmentMapper.xml"/>
+        <mapper resource="com/reyuan/jk/db/server/daoxml/JkDiseaseDepartMapper.xml"/>
+        <mapper resource="com/reyuan/jk/db/server/daoxml/JkDiseaseEntryMapper.xml"/>
+        <mapper resource="com/reyuan/jk/db/server/daoxml/JkDiseasePartMapper.xml"/>
+        <mapper resource="com/reyuan/jk/db/server/daoxml/JkDiseaseSymptomMapper.xml"/>
+        <mapper resource="com/reyuan/jk/db/server/daoxml/JkDoctorDiseaseMapper.xml"/>
+        <mapper resource="com/reyuan/jk/db/server/daoxml/JkDoctorMapper.xml"/>
+        <mapper resource="com/reyuan/jk/db/server/daoxml/JkDoctorDepartmentMapper.xml"/>
+        <mapper resource="com/reyuan/jk/db/server/daoxml/JkHospitalDepartmentMapper.xml"/>
+        <mapper resource="com/reyuan/jk/db/server/daoxml/JkHospitalMapper.xml"/>
+        <mapper resource="com/reyuan/jk/db/server/daoxml/JkKeywordMapper.xml"/>
+        <mapper resource="com/reyuan/jk/db/server/daoxml/JkSymptomMapper.xml"/>
+        <mapper resource="com/reyuan/jk/db/server/daoxml/JkSymptomPartMapper.xml"/>
+        <mapper resource="com/reyuan/jk/db/server/daoxml/JkSymptomDepartmentMapper.xml"/>
+        <mapper resource="com/reyuan/jk/db/server/daoxml/JkTagMapper.xml"/>
+        <mapper resource="com/reyuan/jk/db/server/daoxml/JkUserMapper.xml"/>
+        <mapper resource="com/reyuan/jk/db/server/daoxml/JkTempIndexMapper.xml"/>
+        
+        <!--自己定义的-->
+        <!--内容-->
+        <mapper resource="com/reyuan/jk/db/server/daoxml/ext/ContentMapper.xml"/>
+        <!--评论-->
+        <mapper resource="com/reyuan/jk/db/server/daoxml/ext/CommentMapper.xml"/>
+        <!--疾病-->
+        <mapper resource="com/reyuan/jk/db/server/daoxml/ext/DiseaseEntryMapper.xml"/>
+        <!--医生-->
+        <mapper resource="com/reyuan/jk/db/server/daoxml/ext/DoctorMapper.xml"/>
+        <!--医院-->
+        <mapper resource="com/reyuan/jk/db/server/daoxml/ext/HospitalMapper.xml"/>
+        <!--医院科室-->
+        <mapper resource="com/reyuan/jk/db/server/daoxml/ext/HospitalDepartmentMapper.xml"/>
+        <!--症状-->
+        <mapper resource="com/reyuan/jk/db/server/daoxml/ext/SymptomMapper.xml"/>
+        <!--关键字-->        
+        <mapper resource="com/reyuan/jk/db/server/daoxml/ext/KeywordMapper.xml"/>
+        <!--临时记录索引表-->        
+        <mapper resource="com/reyuan/jk/db/server/daoxml/ext/TempIndexMapper.xml"/>
+        
+    </mappers>
+    
+</configuration>

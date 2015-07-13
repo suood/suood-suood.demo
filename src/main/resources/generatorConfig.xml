@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN" "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd" >
+<generatorConfiguration >
+ <classPathEntry  location="C:/Users/Administrator/.m2/repository/mysql/mysql-connector-java/5.1.10/mysql-connector-java-5.1.10.jar" />
+  <context id="context1" >
+      <jdbcConnection driverClass="com.mysql.jdbc.Driver"
+            connectionURL="jdbc:mysql://192.168.6.3:3307/6jk_db" userId="root" password="123456"/>
+	<javaTypeResolver>
+  <property name="forceBigDecimals" value="true" />
+</javaTypeResolver>
+    <javaModelGenerator targetPackage="com.reyuan.jk.db.reyuanjk.model" targetProject="C:\Workspaces\MyEclipse 10\reyuan_jk_web\src\main\java" />
+    <sqlMapGenerator targetPackage="com.reyuan.jk.db.reyuanjk.daoxml" targetProject="C:\Workspaces\MyEclipse 10\reyuan_jk_web\src\main\resources" />
+    <javaClientGenerator targetPackage="com.reyuan.jk.db.reyuanjk.mapper" targetProject="C:\Workspaces\MyEclipse 10\reyuan_jk_web\src\main\java" type="XMLMAPPER" />
+	
+	<table schema="reyuan_jk" tableName="jk_disease_entry" >
+	<generatedKey   column="id"  sqlStatement="Mysql"  identity="true"  />
+	</table>
+	
+  </context>
+</generatorConfiguration>
